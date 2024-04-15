@@ -2,9 +2,12 @@ package LinkedList;
 
 public class reverseListDemo {
 
-
+    /**
+     * 反转链表
+     * @param head
+     * @return
+     */
     public ListNode reverseList(ListNode head){
-
         ListNode cur=head;
         ListNode pre=null;
         while (cur!=null){
