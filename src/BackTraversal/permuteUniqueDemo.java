@@ -1,12 +1,9 @@
 package BackTraversal;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class permuteUniqueDemo {
-
     /**
      * 需要在同一层上去重复的元素：
      */
