@@ -10,9 +10,8 @@ public class eraseOverlapIntervalsDemo {
      * @return
      */
     public int eraseOverlapIntervals(int[][] intervals) {
-
+        //自定义比较器：
         Arrays.sort(intervals, new Comparator<int[]>() {
-
             @Override
             public int compare(int[] a, int[] b) {
                 return a[0] - b[0];

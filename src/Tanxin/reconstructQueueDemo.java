@@ -6,7 +6,7 @@ import java.util.LinkedList;
 public class reconstructQueueDemo {
 
     /**
-     * 先高度降序排列，然后按第二维度元素升序排列
+     * 身高排序：先高度降序排列，然后按第二维度元素升序排列
      * @param people
      * @return
      */

@@ -4,6 +4,12 @@ import java.util.Arrays;
 
 public class findMinArrowShotsDemo {
 
+    /**
+     * 射穿气球所需最少的箭
+     * @param points
+     * @return
+     */
+
     // 1.先按左边界进行升序排列
     //2. 如果point[i][0] > point[i-1][1] 第i个气球的左边界大于i-1个气球的右边界就需要一只箭
     public int findMinArrowShots(int[][] points){
