@@ -3,6 +3,8 @@ package Tanxin;
 public class monotoneIncreasingDigitsDemo {
 
     /**
+     *
+     *遇到前一个数字，比后一位数字大，前一位数字减一，后一位数字直接赋值为9
      * 从后往前遍历：str[i-1] > str[i] ,str[i-1] -- , str[i] =9;
      * @param n
      * @return

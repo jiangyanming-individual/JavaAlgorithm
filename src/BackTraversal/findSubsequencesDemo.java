@@ -2,12 +2,13 @@ package BackTraversal;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 
 public class findSubsequencesDemo {
 
     List<List<Integer>> result=new ArrayList<List<Integer>>();
-    List<Integer> path=new ArrayList<>();
+    List<Integer> path=new LinkedList<>();
     public List<List<Integer>> findSubsequences(int[] num) {
 
         backtraversal(num,0);
@@ -22,7 +23,7 @@ public class findSubsequencesDemo {
         }
         HashSet hashSet=new HashSet<Integer>(); //同一层去重复
         for (int i = startIndex; i < nums.length; i++) {
-            if (!path.isEmpty() && nums[i]< path.getLast() || hashSet.contains(nums[i])){
+            if (!path.isEmpty() && nums[i]< path.get(path.size()-1) || hashSet.contains(nums[i])){
                 continue;
             }
             hashSet.add(nums[i]);
