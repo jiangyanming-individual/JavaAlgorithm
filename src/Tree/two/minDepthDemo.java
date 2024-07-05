@@ -3,7 +3,7 @@ package Tree.two;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class minDepth {
+public class minDepthDemo {
 
     public int minDepth(TreeNode root){
         if (root == null) return 0;
@@ -15,7 +15,7 @@ public class minDepth {
             while (size>0){
                 TreeNode poll = queue.poll();
                 if (poll.left == null && poll.right== null){
-                    return minDepth + 1; //直接return minDepth +1
+                    return minDepth + 1; //直接return minDepthDemo +1
                 }
                 if (poll.left!=null)queue.add(poll.left);
                 if (poll.right!=null) queue.add(poll.right);
