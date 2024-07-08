@@ -1,12 +1,13 @@
 package Tanxin.two;
 
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
 import java.util.stream.IntStream;
 
 public class largestSumAfterKNegationsDemo {
 
     public int largestSumAfterKNegations(int[] nums, int k) {
-
         //降序排列：
         int[] resNums = IntStream.of(nums).boxed().sorted((o1, o2) -> {
             return Math.abs(o2) - Math.abs(o1);
@@ -18,7 +19,6 @@ public class largestSumAfterKNegationsDemo {
                 k--;
             }
         }
-
 
         //如果k最后还剩下，就取反最后一个
         if (k % 2 == 1) {
