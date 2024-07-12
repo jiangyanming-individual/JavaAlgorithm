@@ -44,7 +44,7 @@ public class buildTreeDemo {
 
         int leftPostorderStart = postorderStart;
         int leftPostorderEnd = postorderStart + (middleIndex - inorderStart);
-        int rightPostorderStart = leftPostorderStart;
+        int rightPostorderStart = leftPostorderEnd;
         int rightPostorderEnd = postorderEnd-1; //减去最后一个节点，因为用过了
 
         // 递归
