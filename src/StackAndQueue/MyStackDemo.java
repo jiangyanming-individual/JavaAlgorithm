@@ -5,7 +5,6 @@ import java.util.Queue;
 
 public class MyStackDemo {
 
-
     Queue<Integer> queueIn; //只使用一个也可以
     Queue<Integer> queueOut;
     public MyStackDemo() {
