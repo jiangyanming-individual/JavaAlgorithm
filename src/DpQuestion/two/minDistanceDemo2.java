@@ -22,7 +22,7 @@ public class minDistanceDemo2 {
                 if (word1.charAt(i-1) == word2.charAt(j-1)){
                     dp[i][j]=dp[i-1][j-1];
                 }else {
-                    //同时删除出， word1删除或者word2删除：
+                    //(1)替换元素， (2) word1删除 或者(3)word2删除：
                     dp[i][j]=Math.min(dp[i-1][j],Math.min(dp[i][j-1],dp[i-1][j-1])) + 1;
                 }
             }
