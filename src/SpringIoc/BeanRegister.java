@@ -7,7 +7,6 @@ import java.util.Map;
  */
 public class BeanRegister {
 
-
     Map<String,Object> singletonMap=new HashMap<String, Object>(32);
 
     /**
@@ -24,6 +23,5 @@ public class BeanRegister {
         // 没有话直接注册
         singletonMap.put(beanName,bean);
     }
-
 
 }

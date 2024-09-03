@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.Properties;
 
 /**
- *资源加载器
+ *资源加载器：用于加载配置文件中的class路径
  */
 public class ResourceLoader {
     /**
