@@ -2,10 +2,7 @@ package LinkedList.two;
 
 public class reverseBetweenDemo {
 
-
     public static void main(String[] args) {
-
-
 
     }
     public static ListNode reverseBetween (ListNode head, int m, int n) {
