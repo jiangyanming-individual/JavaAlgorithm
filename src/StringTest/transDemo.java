@@ -21,24 +21,37 @@ public class transDemo {
 
     public static String trans (String s, int n) {
 
-        //  反转字符串，反转空格，大小写；
-        StringBuilder stringBuilder = new StringBuilder();
-        //大小写转换：
-        for (int i=0;i<s.length();i++){
-            if (s.charAt(i) >='a' && s.charAt(i)<='z'){
-                stringBuilder.append(s.charAt(i) -'a' + 'A');
-            }else if (s.charAt(i)>='A' && s.charAt(i)<='Z'){
-                stringBuilder.append(s.charAt(i)-'A' + 'a');
-            }else {
-                //空格直接加入：
-                stringBuilder.append(s.charAt(i));
-            }
+
+        StringBuffer res=new StringBuffer();
+        for(int i = 0; i < n; i++){
+            //大小写转换
+            if(s.charAt(i) <= 'Z' && s.charAt(i) >= 'A')
+                res.append((char)(s.charAt(i) - 'A' + 'a'));
+            else if(s.charAt(i) >= 'a' && s.charAt(i) <= 'z')
+                res.append((char)(s.charAt(i) - 'a' + 'A'));
+            else
+                //空格直接复制
+                res.append(s.charAt(i));
         }
         //反转字符串：
-        reverseStr(stringBuilder,0,n-1);
-        //反转单个单词
-        reverseWord(stringBuilder);
-        return stringBuilder.toString();
+        StringBuffer stringBuffer = res.reverse();
+
+        for (int i=0;i<n;i++){
+            // 找到空格：
+            int end=i;
+            while (end<n && stringBuffer.charAt(end) !=' '){
+                end++;
+            }
+            String substring = res.substring(i, end);  // end 取不到
+            StringBuffer buffer = new StringBuffer(substring);
+            // 翻转单个单词；
+            String word = buffer.reverse().toString();
+            res.replace(i,end,word);
+            //重新找新的单词：
+            i=end;
+        }
+        System.out.println(res);
+        return res.toString();
     }
 
     /**
@@ -47,7 +60,7 @@ public class transDemo {
      * @param start
      * @param end
      */
-    public static void reverseStr(StringBuilder  sb,int start,int end){
+    public static void reverseStr(StringBuilder sb,int start,int end){
         while (start<end){
             //快慢指针
             char temp = sb.charAt(start);
@@ -59,13 +72,15 @@ public class transDemo {
     }
     public static void reverseWord(StringBuilder sb){
         int start=0; //开始下标
-        for (int i=0;i<=sb.length();i++){
-            //遇到空格活着的字符串尾部，翻转
-            if (start == sb.length() || sb.charAt(i) ==' '){
-                reverseStr(sb,start,i-1);
+        int end=1; // 多加1
+        int n = sb.length();
+        while (start<n){
+            while (end<n && sb.charAt(end)!=' '){
+                end++;
             }
-            //start 从空格的下一个开始
-            start =start +1;
+            reverseStr(sb,start,end-1);
+            start=end+1;
+            end=start+1;
         }
     }
 }
