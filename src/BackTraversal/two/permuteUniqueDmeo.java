@@ -26,17 +26,17 @@ public class permuteUniqueDmeo {
     }
     public void backtracking(int[] nums, boolean[] used){
 
+        // 递归条件，当path.size= nums.size时 ，递归终止。
         if (path.size() == nums.length){
             result.add(new ArrayList<>(path));
             return;
         }
-
         for (int i=0;i<nums.length;i++){
             //同一层去重
             if (i > 0 && nums[i] == nums[i - 1] && used[i - 1] == false){
                 continue;
             }
-            //如果还没有使用
+            //如果还没有使用元素，然后进行操作
             if (used[i] ==false){
                 used[i]=true;
                 path.add(nums[i]);
