@@ -1,4 +1,4 @@
-package LiKoHot100.zichuan;
+package LiKoHot100.滑动窗口;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -44,7 +44,6 @@ public class findAnagramsDemo {
             //滑动pLen长度
             sCount[s.charAt(i) - 'a']--;
             sCount[s.charAt(i + pLen) - 'a'] ++;
-
             // 加入到结果集中
             if (Arrays.equals(sCount, pCount)){
                 res.add(i + 1);

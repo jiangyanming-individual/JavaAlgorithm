@@ -1,4 +1,4 @@
-package LiKoHot100.树;
+package LiKoHot100.动态规划;
 
 public class climbStairsDemo {
 

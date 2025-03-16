@@ -1,34 +1,44 @@
 package test;
-
+import java.util.List;
 import java.util.Scanner;
 
 public class Main2 {
 
-    public static void main(String[] args) {
-        int T;
-        Scanner scanner = new Scanner(System.in);
-        T = scanner.nextInt();
+    public static ListNode findKthFromEnd(ListNode head, int k){
 
-        for (int i=0;i<T;i++) {
-            int n=scanner.nextInt();
-            int [] nums=new int[n];
-            for (int k=0;k<n;k++){
-                nums[i]=scanner.nextInt();
+        ListNode dummaryHead = new ListNode(-1);
+        dummaryHead.next=head;
+        ListNode fast=dummaryHead;
+        ListNode slow=dummaryHead;
+
+        // 快指针移动k个位置
+        for (int i=0;i<k;i++){
+            if (fast == null){
+                return null;
             }
-            int result = getResult(nums);
-            System.out.println(result);
+            fast=fast.next;
         }
+        while (fast!=null){
+            fast=fast.next;
+            slow=slow.next;
+        }
+        // 返回倒数k的节点
+        return slow.next;
+    }
+}
 
-        scanner.close();
+
+class ListNode {
+    int val;
+    ListNode next;
+
+    ListNode(int val) {
+        this.val = val;
     }
 
-
-    public static int getResult(int[] nums){
-        int result=0;
-
-        for (int i=0;i<nums.length-1;i++){
-        }
-        return result + 1;
+    public ListNode(int val, ListNode next) {
+        this.val = val;
+        this.next = next;
     }
 }
 

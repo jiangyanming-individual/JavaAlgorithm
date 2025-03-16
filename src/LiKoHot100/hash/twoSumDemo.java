@@ -1,4 +1,4 @@
-package LiKoHot100;
+package LiKoHot100.hash;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -6,11 +6,6 @@ import java.util.List;
 
 public class twoSumDemo {
 
-
-    public static void main(String[] args) {
-
-
-    }
 
     public  int[] twoSum(int[] nums, int target) {
 

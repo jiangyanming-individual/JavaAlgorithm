@@ -5,40 +5,33 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-
-        int n;
         Scanner scanner = new Scanner(System.in);
-        n = scanner.nextInt();
-
-        int[] prices = new int[4];
-        for (int i = 0; i < 4; i++) {
-            prices[i] = scanner.nextInt();
-        }
-        int [] nums=new int[n];
-        for (int i=0;i<n;i++){
-            nums[i]=scanner.nextInt();
-        }
-
+        String string = scanner.nextLine();
         scanner.close();
-        int res = getResult(prices,nums);
-        System.out.println(res);
-
+        boolean res = isPalindrome(string);
+        System.out.println("isPalindrome(" + string+ ") ->"+ res);
     }
+    public static boolean isPalindrome(String s){
 
-
-    public static int getResult(int[] prices,int[] nums){
-        int min=0;
-        for (int i=0;i<nums.length;i++) {
-            if (nums[i]<=prices[0]){
-                min+=nums[i];
-            }else {
-                min+=prices[0];
+        int left =0;
+        int right=s.length()-1;
+        while (left < right) {
+            while (left < right &&!Character.isLetter(s.charAt(left))) {
+                left++;
             }
-            if (min>=prices[0] && nums.length<=30){
-                min=prices[1];
+            while (left < right &&!Character.isLetter(s.charAt(right))) {
+                right--;
             }
+            char leftChar = Character.toLowerCase(s.charAt(left));
+            char rightChar = Character.toLowerCase(s.charAt(right));
+            // 不相等直接报错
+            if (leftChar!= rightChar) {
+                return false;
+            }
+            left++;
+            right--;
         }
-        return min;
+        return true;
     }
 }
 
