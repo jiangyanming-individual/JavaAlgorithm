@@ -23,6 +23,7 @@ public class minDistanceDemo {
             dp[0][j]= j;
         }
 
+
         // 遍历
         for (int i=1;i<=word1.length();i++){
             for (int j=1;j<=word2.length();j++){
